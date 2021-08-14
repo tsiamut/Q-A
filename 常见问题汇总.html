@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>R语言问题汇总-解答</title>
+  <meta name="description" content="常见问题汇总-解答" />
+  <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="R语言问题汇总-解答" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="常见问题汇总-解答" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="R语言问题汇总-解答" />
+  
+  <meta name="twitter:description" content="常见问题汇总-解答" />
+  
+
+<meta name="author" content="予堂" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  jax: ["input/TeX","output/SVG"],
+  extensions: ["tex2jax.js","MathMenu.js","MathZoom.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+  }
+});
+</script>
+<script type="text/javascript"
+   src="../../../MathJax/MathJax.js">
+</script>
+
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="part"><span><b>I R 安装问题</b></span></li>
+<li class="chapter" data-level="1" data-path="1001-chapter01.html"><a href="#常见问题汇总"><i class="fa fa-check"></i><b>1</b> 常见问题汇总</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="1001-chapter01.html"><a href="#github-上-项目错误被当成pacakge进行安装"><i class="fa fa-check"></i><b>1.0.1</b> github 上 项目错误被当成pacakge，进行安装</a></li>
+<li class="chapter" data-level="1.0.2" data-path="1001-chapter01.html"><a href="#规范的提问方式和流程"><i class="fa fa-check"></i><b>1.0.2</b> 规范的提问方式和流程</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R语言问题汇总-解答</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">R语言问题汇总-解答</h1>
+<p class="author"><em>予堂</em></p>
+<p class="date"><em>2021年8月14日</em></p>
+</div>
+<div id="常见问题汇总" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> 常见问题汇总</h1>
+<div id="github-上-项目错误被当成pacakge进行安装" class="section level3" number="1.0.1">
+<h3><span class="header-section-number">1.0.1</span> github 上 项目错误被当成pacakge，进行安装</h3>
+<p>github 上的 package ，会在 README.md 中有明显的提示安装信息：</p>
+<p>devtools::install_github(‘github-name/pkg-name’)</p>
+<p>remotes::install_github(‘github-name/pkg-name’)</p>
+<p>如果已经提交到 CRAN, 上会显示有：</p>
+<p>install.packages(‘pkg-name’) 类似代码</p>
+<p><strong>不含有以上代码的项目，几乎不可能是 R 语言的 package ！！！</strong></p>
+<p>同时，主流的包，也会在 README.md 中显示如以下 package 类似的 badge (牌子)：</p>
+<p><strong>openxlsx 中显示 其在 CRAN 上的版本号为： 4.2.4， 且当前 github 项目的 R CMD check 自动通过，可以正常安装。</strong></p>
+</div>
+<div id="规范的提问方式和流程" class="section level3" number="1.0.2">
+<h3><span class="header-section-number">1.0.2</span> 规范的提问方式和流程</h3>
+<p>首先，描述问题，接着提供可以重复的最小的代码块，不要涉及到提问者过多的知识背景及复杂的原始数据，</p>
+<p>用最小的例子，最快地说明问题，让其他人能够重复出来问题。</p>
+<p>之后，描述提问者想要得到的结果，以及实际得到的结果。</p>
+<p>最后，说明提问者使用的平台信息，包的版本等等。</p>
+<p>其次，代码中涉及的数据，优先考虑最小化，以及常数通过 datapasta 包，将当前工作空间中的变量保存为可以运行的代</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["R.pdf"],
+"search": {
+"engine": "lunr",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
