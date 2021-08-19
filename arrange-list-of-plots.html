@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3 arrange list of plots | R Q&amp;A</title>
+  <meta name="description" content="3 arrange list of plots | R Q&amp;A" />
+  <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3 arrange list of plots | R Q&amp;A" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 arrange list of plots | R Q&amp;A" />
+  
+  
+  
+
+<meta name="author" content="予堂" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="关于-r-cmd-command.html"/>
+
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>前言</a></li>
+<li class="chapter" data-level="1" data-path="常见问题.html"><a href="常见问题.html"><i class="fa fa-check"></i><b>1</b> 常见问题</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="常见问题.html"><a href="常见问题.html#安装问题"><i class="fa fa-check"></i><b>1.1</b> 安装问题</a></li>
+<li class="chapter" data-level="1.2" data-path="常见问题.html"><a href="常见问题.html#package-无法安装的问题"><i class="fa fa-check"></i><b>1.2</b> package 无法安装的问题</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="关于-r-cmd-command.html"><a href="关于-r-cmd-command.html"><i class="fa fa-check"></i><b>2</b> 关于 R CMD command</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="关于-r-cmd-command.html"><a href="关于-r-cmd-command.html#添加环境变量"><i class="fa fa-check"></i><b>2.1</b> 添加环境变量</a></li>
+<li class="chapter" data-level="2.2" data-path="关于-r-cmd-command.html"><a href="关于-r-cmd-command.html#cmd-窗口"><i class="fa fa-check"></i><b>2.2</b> cmd 窗口</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="arrange-list-of-plots.html"><a href="arrange-list-of-plots.html"><i class="fa fa-check"></i><b>3</b> arrange list of plots</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="arrange-list-of-plots.html"><a href="arrange-list-of-plots.html#list"><i class="fa fa-check"></i><b>3.1</b> list</a></li>
+<li class="chapter" data-level="3.2" data-path="arrange-list-of-plots.html"><a href="arrange-list-of-plots.html#plotlist-cowplot"><i class="fa fa-check"></i><b>3.2</b> plotlist-cowplot</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R Q&amp;A</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="arrange-list-of-plots" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> arrange list of plots</h1>
+<p>目前 ggplot 绘图系统主要使用的可用于拼图的包有： patchwork， cowplot 等，至于 gridExtra, aplot 我们暂且不谈。</p>
+<p>至于具体的入门教程，很显然 patchwork 包的 <a href="https://cran.r-project.org/web/packages/patchwork/index.html">主页</a>上提供的 <a href="https://cran.r-project.org/web/packages/patchwork/vignettes/patchwork.html">Vignettes: Getting started</a> 中已经给出了通俗易懂的方法：使用 “+” 的语法，将 多个 ggplot2 对象进行拼接操作。</p>
+<p>除此以外，cowplot 的 <a href="https://cran.r-project.org/web/packages/cowplot/vignettes/introduction.html">Vignettes: Introduction to cowplot</a> 也给出了 plot_grid() 的简单使用方法。</p>
+<p>但以上的内容都是针对多个 ggplot2 对象进行操作，事实上，还有另一种情况：列表中包含多个 ggplot2 的对象，这往往主要是采用 for 循环一类批量绘图得到的列表对象，或者是将获得的十余个或几十个变量保存到一个列表中。</p>
+<p>其关键在于：列表中的各个元素均为 ggplot2 对象。</p>
+<p>这里，我们以 women 数据集为例，汇总散点图和折线图为例，将其保存为变量 p1,
+接着重复生成其余7个变量：p2 到 p8</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="arrange-list-of-plots.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb7-2"><a href="arrange-list-of-plots.html#cb7-2" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(women,<span class="fu">aes</span>(height,weight)) <span class="sc">+</span> </span>
+<span id="cb7-3"><a href="arrange-list-of-plots.html#cb7-3" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_line</span>() <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
+<span id="cb7-4"><a href="arrange-list-of-plots.html#cb7-4" aria-hidden="true" tabindex="-1"></a>p8 <span class="ot">&lt;-</span> p7 <span class="ot">&lt;-</span> p6 <span class="ot">&lt;-</span> p5 <span class="ot">&lt;-</span> p4 <span class="ot">&lt;-</span> p3 <span class="ot">&lt;-</span> p2 <span class="ot">&lt;-</span> p1</span></code></pre></div>
+<p>接着用 patchwork 进行拼图：</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="arrange-list-of-plots.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb8-2"><a href="arrange-list-of-plots.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">paste0</span>(<span class="st">&#39;p&#39;</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>, <span class="at">collapse =</span> <span class="st">&#39; + &#39;</span>)  <span class="ot">-&gt;</span> a</span>
+<span id="cb8-3"><a href="arrange-list-of-plots.html#cb8-3" aria-hidden="true" tabindex="-1"></a>a</span></code></pre></div>
+<pre><code>## [1] &quot;p1 + p2 + p3 + p4 + p5 + p6 + p7 + p8&quot;</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="arrange-list-of-plots.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">eval</span>(<span class="fu">parse</span>(<span class="at">text =</span> a)) <span class="sc">+</span> <span class="fu">plot_layout</span>(<span class="at">nrow =</span> <span class="dv">2</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-10-1.png" width="768" />
+变量 a 为字符串格式，采用 paste0() 生成p1到p8 之间以 “+” 相连的字符串，接着使用 <code>eval(parse(text =a))</code>将其运行并在末尾继续使用 “+”语法添加 plot_layout() 语句。</p>
+<p>这种方式仅仅局限于如： 许多个变量时的情况，对于列表里的元素操作就不建议如此操作。并且，一次性生成的众多的 ggplot2 对象，大多数情况下变量名都是具有规律性的。而对于混乱且没有统一性的变量名，还是建议老老实实地手动写完进行拼图。</p>
+<div id="list" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> list</h2>
+<p>事实上，cowplot 与 patchwork 本身已经支持了 对于list 中众多 ggplot2 对象拼图的语法支持，只是因为大多数自媒体的宣传，且大部分的教程都是完全相同的框架，与 cowplot, patchwork 的 Vignettes 中的内容并无太大区别，都是限于多个对象时的拼图。这很容易让初学者忽略掉包里的其他函数和主函数的重要参数。</p>
+<p>解决问题的重要途径是：读文档！</p>
+<p>以 patchwork 为例，阅读文档后，便会注意到：<code>wrap_plots()</code> 函数：
+<img src="figs/03/wrap_plots_1.png" width="368" style="display: block; margin: auto;" />
+<code>wrap_plots()</code> 函数支持将 list 对象用于拼图，至于使用的方法可以参考该函数的示例部分：</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="arrange-list-of-plots.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">example</span>(<span class="st">&quot;wrap_plots&quot;</span>)</span></code></pre></div>
+<p>在这里，针对已有的p1 到 p8 的变量，将其保存到列表中，并用<code>wrap_plots()</code> 进行拼图：</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="arrange-list-of-plots.html#cb12-1" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(women,<span class="fu">aes</span>(height,weight)) <span class="sc">+</span> </span>
+<span id="cb12-2"><a href="arrange-list-of-plots.html#cb12-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_line</span>() <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
+<span id="cb12-3"><a href="arrange-list-of-plots.html#cb12-3" aria-hidden="true" tabindex="-1"></a>p8 <span class="ot">&lt;-</span> p7 <span class="ot">&lt;-</span> p6 <span class="ot">&lt;-</span> p5 <span class="ot">&lt;-</span> p4 <span class="ot">&lt;-</span> p3 <span class="ot">&lt;-</span> p2 <span class="ot">&lt;-</span> p1</span>
+<span id="cb12-4"><a href="arrange-list-of-plots.html#cb12-4" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">list</span>(p1,p2,p3,p4,p5,p6,p7,p8)</span>
+<span id="cb12-5"><a href="arrange-list-of-plots.html#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb12-6"><a href="arrange-list-of-plots.html#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="fu">wrap_plots</span>(b)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-13-1.png" width="768" />
+但很多人会有疑问，如何批量将多个变量保存到列表中？</p>
+<p>很显然，上面的手动生成列表的方式，对于几十个元素而言，并不高效。对于这个问题，之后的相关章节中会进一步展开讨论。这里暂不叙述。</p>
+</div>
+<div id="plotlist-cowplot" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> plotlist-cowplot</h2>
+<p>对于 cowplot 包，其主函数<code>plot_grid()</code> 的第二个参数就尤为重要。</p>
+<pre class="plot_grid("><code>  ...,
+  plotlist = NULL,
+  ...)</code></pre>
+<p><code>plot_grid()</code> 的第二个参数 plotlist 接收list对象，用以拼图。但这个函数并不等同于 patchwork 包中的 wrap_plots() 函数的第一个参数可以同时接收多个对象或者是一个列表对象。因此，需要引起格外重视。</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="arrange-list-of-plots.html#cb14-1" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(women,<span class="fu">aes</span>(height,weight)) <span class="sc">+</span> </span>
+<span id="cb14-2"><a href="arrange-list-of-plots.html#cb14-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_line</span>() <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
+<span id="cb14-3"><a href="arrange-list-of-plots.html#cb14-3" aria-hidden="true" tabindex="-1"></a>p8 <span class="ot">&lt;-</span> p7 <span class="ot">&lt;-</span> p6 <span class="ot">&lt;-</span> p5 <span class="ot">&lt;-</span> p4 <span class="ot">&lt;-</span> p3 <span class="ot">&lt;-</span> p2 <span class="ot">&lt;-</span> p1</span>
+<span id="cb14-4"><a href="arrange-list-of-plots.html#cb14-4" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">list</span>(p1,p2,p3,p4,p5,p6,p7,p8)</span>
+<span id="cb14-5"><a href="arrange-list-of-plots.html#cb14-5" aria-hidden="true" tabindex="-1"></a>cowplot<span class="sc">::</span><span class="fu">plot_grid</span>(<span class="at">plotlist =</span> b)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-14-1.png" width="768" /></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="关于-r-cmd-command.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "lunr",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
