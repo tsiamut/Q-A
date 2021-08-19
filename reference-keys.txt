@@ -4,3 +4,6 @@ package-无法安装的问题
 关于-r-cmd-command
 添加环境变量
 cmd-窗口
+arrange-list-of-plots
+list
+plotlist-cowplot
