@@ -7,3 +7,5 @@ cmd-窗口
 arrange-list-of-plots
 list
 plotlist-cowplot
+ggplot2-绘图问题解答
+条形图绘制的难点
