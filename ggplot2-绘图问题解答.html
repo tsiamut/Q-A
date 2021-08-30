@@ -260,20 +260,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb35-3"><a href="ggplot2-绘图问题解答.html#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">12</span>,<span class="dv">30</span>,<span class="dv">24</span>,<span class="dv">8</span>,<span class="dv">18</span>,<span class="dv">25</span>,<span class="dv">34</span>,<span class="dv">28</span>,<span class="dv">39</span>),</span>
 <span id="cb35-4"><a href="ggplot2-绘图问题解答.html#cb35-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">f =</span> <span class="fu">c</span>(<span class="st">&#39;Ba&#39;</span>,<span class="st">&#39;ZH&#39;</span>,<span class="st">&#39;Fu&#39;</span>,<span class="st">&#39;Ba&#39;</span>,<span class="st">&#39;ZH&#39;</span>,<span class="st">&#39;Ba&#39;</span>,<span class="st">&#39;Fu&#39;</span>,<span class="st">&#39;Fu&#39;</span>,<span class="st">&#39;ZH&#39;</span>)</span>
 <span id="cb35-5"><a href="ggplot2-绘图问题解答.html#cb35-5" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb35-6"><a href="ggplot2-绘图问题解答.html#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dd,<span class="fu">aes</span>(xx,y,<span class="at">group =</span> f, <span class="at">fill =</span> f)) <span class="sc">+</span></span>
+<span id="cb35-6"><a href="ggplot2-绘图问题解答.html#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(d1,<span class="fu">aes</span>(x,y,<span class="at">group =</span> f, <span class="at">fill =</span> f)) <span class="sc">+</span></span>
 <span id="cb35-7"><a href="ggplot2-绘图问题解答.html#cb35-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">width =</span> <span class="fl">0.5</span>) </span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
 <p>紧接着是实现最终效果绘制：</p>
 <div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="ggplot2-绘图问题解答.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">arrange</span>(d1,f,<span class="sc">-</span>y)<span class="sc">$</span>x <span class="ot">-&gt;</span> g1</span>
 <span id="cb36-2"><a href="ggplot2-绘图问题解答.html#cb36-2" aria-hidden="true" tabindex="-1"></a>d1 <span class="sc">%&gt;%</span> </span>
 <span id="cb36-3"><a href="ggplot2-绘图问题解答.html#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">x1 =</span> <span class="fu">fct_relevel</span>(x,g1)) <span class="ot">-&gt;</span> d6</span>
-<span id="cb36-4"><a href="ggplot2-绘图问题解答.html#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dd,<span class="fu">aes</span>(xx,y,<span class="at">group =</span> f, <span class="at">fill =</span> f)) <span class="sc">+</span></span>
+<span id="cb36-4"><a href="ggplot2-绘图问题解答.html#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(d6,<span class="fu">aes</span>(x1,y,<span class="at">group =</span> f, <span class="at">fill =</span> f)) <span class="sc">+</span></span>
 <span id="cb36-5"><a href="ggplot2-绘图问题解答.html#cb36-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">width =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb36-6"><a href="ggplot2-绘图问题解答.html#cb36-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept  =</span> <span class="fl">4.5</span>,</span>
-<span id="cb36-7"><a href="ggplot2-绘图问题解答.html#cb36-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">linetype =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb36-8"><a href="ggplot2-绘图问题解答.html#cb36-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">fill =</span> <span class="st">&#39;&#39;</span>) <span class="sc">+</span></span>
-<span id="cb36-9"><a href="ggplot2-绘图问题解答.html#cb36-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb36-10"><a href="ggplot2-绘图问题解答.html#cb36-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.2</span>,<span class="fl">0.88</span>))</span></code></pre></div>
+<span id="cb36-6"><a href="ggplot2-绘图问题解答.html#cb36-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">fill =</span> <span class="st">&#39;&#39;</span>) <span class="sc">+</span></span>
+<span id="cb36-7"><a href="ggplot2-绘图问题解答.html#cb36-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb36-8"><a href="ggplot2-绘图问题解答.html#cb36-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.2</span>,<span class="fl">0.85</span>))</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
 
 </div>
