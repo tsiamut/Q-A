@@ -9,3 +9,5 @@ list
 plotlist-cowplot
 ggplot2-绘图问题解答
 条形图绘制的难点
+environment-variables
+设置环境变量
